@@ -48,6 +48,9 @@ typedef id (^HHRouterBlock)(NSDictionary *params);
 
 - (HHRouteType)canRoute:(NSString *)route;
 
+//add by szc 20160914 StoryBoard 格式为 storyboardName:storyboard ID eg:   Main:storyList
+- (void)map:(NSString *)route toControllerClass:(Class)controllerClass withStoryBoard:(NSString*)storyboard;
+
 @end
 
 ///--------------------------------

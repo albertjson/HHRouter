@@ -7,6 +7,7 @@
 //
 
 #import "StoryViewController.h"
+#import "HHRouter.h"
 
 @interface StoryViewController ()
 
@@ -26,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@%@",self.params[@"userId"],self.params[@"userName"]];
+    
 	// Do any additional setup after loading the view.
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "UserViewController.h"
+#import "HHRouter.h"
 
 @interface UserViewController ()
 
@@ -26,9 +27,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"User";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Story" style:UIBarButtonItemStylePlain target:self action:@selector(storyAction)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"StoryList" style:UIBarButtonItemStylePlain target:self action:@selector(storyListAction)];
 	// Do any additional setup after loading the view.
 }
-
+- (void)storyAction
+{
+    UIViewController * viewController = [[HHRouter shared] matchController:@"/story/222/mystory"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+- (void)storyListAction
+{
+    UIViewController * viewController = [[HHRouter shared] matchController:@"/storyList/333/mystoryList"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

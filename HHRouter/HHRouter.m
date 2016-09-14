@@ -53,8 +53,22 @@
 {
     NSDictionary *params = [self paramsInRoute:route];
     Class controllerClass = params[@"controller_class"];
-
-    UIViewController *viewController = [[controllerClass alloc] init];
+    NSString * story = params[@"storyboard_id"];
+        
+    UIViewController *viewController = nil;
+    
+    if ([story containsString:@":"]) {
+        NSArray * storys = [story componentsSeparatedByString:@":"];
+        NSString * storyName = [storys firstObject];
+        if ([storyName isEqualToString:@""]) {
+            storyName = @"Main";
+        }
+        NSString * controllerId = [storys lastObject];
+        
+        viewController = [[UIStoryboard storyboardWithName:storyName bundle:nil] instantiateViewControllerWithIdentifier:controllerId];
+    }else{
+        viewController = [[controllerClass alloc] init];
+    }
 
     if ([viewController respondsToSelector:@selector(setParams:)]) {
         [viewController performSelector:@selector(setParams:)
@@ -108,6 +122,7 @@
     params[@"route"] = [self stringFromFilterAppUrlScheme:route];
 
     NSMutableDictionary *subRoutes = self.routes;
+    NSLog(@"self.routers😳 = %@",self.routes);
     NSArray *pathComponents = [self pathComponentsFromRoute:params[@"route"]];
     for (NSString *pathComponent in pathComponents) {
         BOOL found = NO;
@@ -148,6 +163,7 @@
     if (class_isMetaClass(object_getClass(class))) {
         if ([class isSubclassOfClass:[UIViewController class]]) {
             params[@"controller_class"] = subRoutes[@"_"];
+            params[@"storyboard_id"] = subRoutes[@"~"];
         } else {
             return nil;
         }
@@ -232,9 +248,7 @@
 
 - (void)map:(NSString *)route toControllerClass:(Class)controllerClass
 {
-    NSMutableDictionary *subRoutes = [self subRoutesToRoute:route];
-
-    subRoutes[@"_"] = controllerClass;
+    [self map:route toControllerClass:controllerClass withStoryBoard:nil];
 }
 
 - (HHRouteType)canRoute:(NSString *)route
@@ -250,6 +264,16 @@
     }
     
     return HHRouteTypeNone;
+}
+
+- (void)map:(NSString *)route toControllerClass:(Class)controllerClass withStoryBoard:(NSString*)storyboard
+{
+    NSMutableDictionary *subRoutes = [self subRoutesToRoute:route];
+    
+    subRoutes[@"_"] = controllerClass;
+    if (storyboard) {
+        subRoutes[@"~"] = storyboard;
+    }
 }
 
 @end

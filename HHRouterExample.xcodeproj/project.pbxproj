@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2E9EFA1D88FC64000047DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E9EF91D88FC64000047DF /* Main.storyboard */; };
 		A02D396618D1B21F00291FE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02D396518D1B21F00291FE9 /* Foundation.framework */; };
 		A02D396A18D1B21F00291FE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02D396918D1B21F00291FE9 /* UIKit.framework */; };
 		A02D397018D1B21F00291FE9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A02D396E18D1B21F00291FE9 /* InfoPlist.strings */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C2E9EF91D88FC64000047DF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A02D396218D1B21F00291FE9 /* HHRouterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHRouterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02D396518D1B21F00291FE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A02D396918D1B21F00291FE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 			children = (
 				A02D397418D1B21F00291FE9 /* AppDelegate.h */,
 				A02D397518D1B21F00291FE9 /* AppDelegate.m */,
+				0C2E9EF91D88FC64000047DF /* Main.storyboard */,
 				A02D397718D1B21F00291FE9 /* Images.xcassets */,
 				A02D396C18D1B21F00291FE9 /* Supporting Files */,
 				A02D399C18D2D9F100291FE9 /* UserViewController.h */,
@@ -216,7 +219,7 @@
 		A02D395A18D1B21F00291FE9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Huohua;
 				TargetAttributes = {
 					A02D397C18D1B21F00291FE9 = {
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2E9EFA1D88FC64000047DF /* Main.storyboard in Resources */,
 				A02D397018D1B21F00291FE9 /* InfoPlist.strings in Resources */,
 				A02D397818D1B21F00291FE9 /* Images.xcassets in Resources */,
 			);
@@ -331,13 +335,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -350,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -369,20 +379,25 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -397,6 +412,7 @@
 				GCC_PREFIX_HEADER = "HHRouterExample/HHRouterExample-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				INFOPLIST_FILE = "HHRouterExample/HHRouterExample-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.huohua.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -411,6 +427,7 @@
 				GCC_PREFIX_HEADER = "HHRouterExample/HHRouterExample-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				INFOPLIST_FILE = "HHRouterExample/HHRouterExample-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.huohua.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -433,6 +450,7 @@
 				);
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				INFOPLIST_FILE = "HHRouterExampleTests/HHRouterExampleTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.huohua.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -452,6 +470,7 @@
 				GCC_PREFIX_HEADER = "HHRouterExample/HHRouterExample-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				INFOPLIST_FILE = "HHRouterExampleTests/HHRouterExampleTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.huohua.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
