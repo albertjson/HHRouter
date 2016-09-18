@@ -65,7 +65,8 @@
         }
         NSString * controllerId = [storys lastObject];
         
-        viewController = [[UIStoryboard storyboardWithName:storyName bundle:nil] instantiateViewControllerWithIdentifier:controllerId];
+        viewController = [[UIStoryboard storyboardWithName:storyName bundle:nil]
+                          instantiateViewControllerWithIdentifier:controllerId];
     }else{
         viewController = [[controllerClass alloc] init];
     }
@@ -122,7 +123,6 @@
     params[@"route"] = [self stringFromFilterAppUrlScheme:route];
 
     NSMutableDictionary *subRoutes = self.routes;
-    NSLog(@"self.routers😳 = %@",self.routes);
     NSArray *pathComponents = [self pathComponentsFromRoute:params[@"route"]];
     for (NSString *pathComponent in pathComponents) {
         BOOL found = NO;
