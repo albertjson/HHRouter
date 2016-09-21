@@ -8,6 +8,7 @@
 
 #import "UserViewController.h"
 #import "HHRouter.h"
+#import "StoryViewController.h"
 
 @interface UserViewController ()
 
@@ -35,9 +36,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"StoryList" style:UIBarButtonItemStylePlain target:self action:@selector(storyListAction)];
 	// Do any additional setup after loading the view.
 }
+//特别需要注意：由于跳转有可能是init/storyboard，还有可能是routter跳转的init/storyboard，故需要通过param是否为空来区分是否是routter过来的
 - (void)storyAction
 {
-    UIViewController * viewController = [[HHRouter shared] matchController:@"/story/222/mystory"];
+    UIViewController * viewController = [[HHRouter shared] matchController:@"/fromHtml/story/2222/fuckyou?mimei=222"];
+    //UIViewController * viewController = [[StoryViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 - (void)storyListAction
