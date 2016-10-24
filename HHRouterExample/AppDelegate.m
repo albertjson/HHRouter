@@ -27,7 +27,7 @@
      测试：可以在Safari中输入  hhrouter2:///fromHtml/story/222/333 回车
      */
     //注册代码布局的页面
-    [[HHRouter shared] map:@"hhrouter2:///fromHtml/story/:userId/:userName/" toControllerClass:NSClassFromString(@"StoryViewController")];
+    [[HHRouter shared] map:@"hhrouter2://fromHtml/story/:userId/:userName/" toControllerClass:NSClassFromString(@"StoryViewController")];
     //注册故事版布局的页面
     [[HHRouter shared] map:@"hhrouter2:/storyList/:userId/:userName/" toControllerClass:NSClassFromString(@"StoryListViewController") withStoryBoard:@":storyList"];
     
